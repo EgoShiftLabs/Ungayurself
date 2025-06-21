@@ -62,68 +62,132 @@
                 class="bg-gradient-to-r from-purple-600 to-pink-600 p-4 rounded-lg border border-yellow-400 shadow-2xl max-w-sm"
             >
                 <div class="flex items-center">
-                    <span class="text-3xl mr-3" id="achievementIcon">🏆</span>
-                    <div>
-                        <h3 class="font-bold text-white">
-                            Achievement Unlocked!
-                        </h3>
-                        <p class="text-sm text-gray-200" id="achievementTitle">
-                            First Dose
-                        </p>
-                        <p class="text-xs text-gray-300" id="achievementDesc">
-                            Visited the Un-Gay Urself website
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Un-Gay Urself™</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      color: white;
+      overflow-x: hidden;
+    }
 
-        <!-- Animated Background -->
-        <div
-            class="fixed top-0 left-0 right-0 bottom-0 z-[-2] animate-rainbow-bg"
-        ></div>
+    header {
+      width: 100%;
+      text-align: center;
+      padding: 20px 0;
+      background-color: #1c1c1e;
+    }
 
-        <!-- Floating Elements -->
-        <div
-            id="floatingElements"
-            class="fixed top-0 left-0 right-0 bottom-0 z-[-1] pointer-events-none"
-        ></div>
+    .banner-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
 
-        <!-- Navigation -->
-        <nav
-            id="navbar"
-            class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-purple-500/30"
-        >
-            <div
-                class="container mx-auto px-4 py-3 flex justify-between items-center"
-            >
-                <div class="text-xl font-bold text-purple-400">
-                    Un-Gay Urself™
-                </div>
-                <div class="hidden md:flex space-x-6">
-                    <a href="#home" class="hover:text-pink-400 transition"
-                        >Home</a
-                    >
-                    <a href="#effects" class="hover:text-pink-400 transition"
-                        >Side Effects</a
-                    >
-                    <a href="#merch" class="hover:text-pink-400 transition"
-                        >Merch</a
-                    >
-                    <a href="#tokeninfo" class="hover:text-pink-400 transition"
-                        >Token Info</a
-                    >
-                    <a href="#whitepaper" class="hover:text-pink-400 transition"
-                        >Whitepaper</a
-                    >
-                </div>
-                <a
-                    href="#admin"
-                    id="adminLink"
-                    class="text-sm text-gray-400 hover:text-white transition"
-                    >Admin</a
-                >
-            </div>
+    .banner-container img {
+      width: 100%;
+      max-width: 960px;
+      border-radius: 12px;
+    }
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      margin: 30px 0 10px;
+    }
+
+    .logo-container img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      box-shadow: 0 0 20px #fff;
+    }
+
+    h1.glitch {
+      text-align: center;
+      font-size: 3rem;
+      text-shadow: 2px 2px 4px #ff00ff, -2px -2px 4px #00ffff;
+      margin-top: 10px;
+    }
+
+    p.tagline {
+      text-align: center;
+      font-size: 1.5rem;
+      color: #ccc;
+    }
+
+    .cta-button {
+      display: block;
+      margin: 30px auto;
+      padding: 14px 28px;
+      font-size: 1.2rem;
+      background-color: #ff4ecb;
+      border: none;
+      border-radius: 30px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 15px #ff4ecb;
+      transition: transform 0.2s;
+    }
+
+    .cta-button:hover {
+      transform: scale(1.05);
+    }
+
+    .achievements {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      background: #2c2c2e;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      color: white;
+    }
+
+    .progress-bar {
+      margin-top: 5px;
+      height: 6px;
+      background: #ff4ecb;
+      border-radius: 5px;
+      width: 80%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Un-Gay Urself™</h2>
+  </header>
+
+  <div class="banner-container">
+    <img src="banner.png" alt="Un-Gay Urself Banner" />
+  </div>
+
+  <div class="logo-container">
+    <img src="logo.png" alt="Un-Gay Urself Logo" />
+  </div>
+
+  <h1 class="glitch">UN-GAY URSELF™</h1>
+  <p class="tagline">Available Nowhere. Results Guaranteed.</p>
+
+  <button class="cta-button">💊 Take Your Dose</button>
+
+  <div class="achievements">
+    Achievements: 4/5
+    <div class="progress-bar"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
         </nav>
 
         <!-- Main Content -->
