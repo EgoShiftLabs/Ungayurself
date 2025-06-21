@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Un-Gay Urself™ - Available Nowhere. Results Guaranteed.</title>
+        <meta
+            name="description"
+            content="The satirical meme token that guarantees results. Experience side effects like sudden pull-up strength, freestyle outbreaks, and more. Available nowhere, results guaranteed."
+        />
+        <meta property="og:title" content="Un-Gay Urself™ - Available Nowhere. Results Guaranteed." />
+        <meta property="og:description" content="The satirical meme token that guarantees results. Experience side effects like sudden pull-up strength, freestyle outbreaks, and more." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ungay-urself.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Un-Gay Urself™" />
+        <meta name="twitter:description" content="Available Nowhere. Results Guaranteed." />
+        <link rel="stylesheet" href="style.css" />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="icon" type="image/png" href="logo.png" />
+    </head>
+    <body>
+        <!-- Sound Effects Toggle -->
+        <div id="soundToggle" class="fixed top-4 right-4 z-50">
+            <button
+                id="soundBtn"
+                class="p-3 rounded-full transition-all bg-purple-600 text-white hover:bg-purple-700"
+                title="Toggle sound effects"
+            >
+                <i class="fas fa-volume-up"></i>
+            </button>
+        </div>
+
+        <!-- Achievement System -->
+        <div id="achievementProgress" class="fixed bottom-4 left-4 z-50">
+            <div
+                class="bg-gray-800/90 backdrop-blur-sm p-3 rounded-lg border border-purple-400/50 min-w-[200px]"
+            >
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm font-bold text-purple-400"
+                        >Achievements</span
+                    >
+                    <span class="text-xs text-gray-300" id="achievementCount"
+                        >1/6</span
+                    >
+                </div>
+                <div class="w-full bg-gray-700 rounded-full h-2">
+                    <div
+                        id="achievementBar"
+                        class="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full transition-all duration-500"
+                        style="width: 16.67%"
+                    ></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Achievement Notification -->
+        <div
+            id="achievementNotification"
+            class="fixed top-20 right-4 z-50 animate-slide-in hidden"
+        >
+            <div
+                class="bg-gradient-to-r from-purple-600 to-pink-600 p-4 rounded-lg border border-yellow-400 shadow-2xl max-w-sm"
+            >
+                <div class="flex items-center">
+                    <span class="text-3xl mr-3" id="achievementIcon">🏆</span>
+                    <div>
+                        <h3 class="font-bold text-white">
+                            Achievement Unlocked!
+                        </h3>
+                        <p class="text-sm text-gray-200" id="achievementTitle">
+                            First Dose
+                        </p>
+                        <p class="text-xs text-gray-300" id="achievementDesc">
+                            Visited the Un-Gay Urself website
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Animated Background -->
+        <div
+            class="fixed top-0 left-0 right-0 bottom-0 z-[-2] animate-rainbow-bg"
+        ></div>
+
+        <!-- Floating Elements -->
+        <div
+            id="floatingElements"
+            class="fixed top-0 left-0 right-0 bottom-0 z-[-1] pointer-events-none"
+        ></div>
+
+        <!-- Navigation -->
+        <nav
+            id="navbar"
+            class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-purple-500/30"
+        >
+            <div
+                class="container mx-auto px-4 py-3 flex justify-between items-center"
+            >
+                <div class="text-xl font-bold text-purple-400">
+                    Un-Gay Urself™
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="hover:text-pink-400 transition"
+                        >Home</a
+                    >
+                    <a href="#effects" class="hover:text-pink-400 transition"
+                        >Side Effects</a
+                    >
+                    <a href="#merch" class="hover:text-pink-400 transition"
+                        >Merch</a
+                    >
+                    <a href="#video" class="hover:text-pink-400 transition"
+                        >Video</a
+                    >
+                    <a href="#tokeninfo" class="hover:text-pink-400 transition"
+                        >Token Info</a
+                    >
+                    <a href="#whitepaper" class="hover:text-pink-400 transition"
+                        >Whitepaper</a
+                    >
+                </div>
+                <a
+                    href="#admin"
+                    id="adminLink"
+                    class="text-sm text-gray-400 hover:text-white transition"
+                    >Admin</a
+                >
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div id="mainContent">
+            <!-- Header Section -->
+            <section
+                id="home"
+                class="min-h-screen flex items-center justify-center text-center px-4 pt-20"
+            >
+                <div class="max-w-4xl mx-auto">
+                    <!-- Banner -->
+                    <div class="mb-8">
+                        <img
+                            id="bannerImage"
+                            src="banner.png"
+                            alt="Un-Gay Urself Banner"
+                            class="w-full max-w-4xl mx-auto mb-6 rounded-2xl shadow-2xl animate-pulse-glow"
+                            loading="lazy"
+                        />
+                    </div>
+
+                    <!-- Logo -->
+                    <div class="mb-8">
+                        <img
+                            id="logoImage"
+                            src="logo.png"
+                            alt="Un-Gay Urself Logo"
+                            class="w-32 h-32 mx-auto mb-6 rounded-full animate-pulse-glow"
+                            loading="lazy"
+                        />
+                    </div>
+
+                    <h1
+                        class="text-4xl md:text-6xl lg:text-8xl font-black mb-4 font-meme relative"
+                    >
+                        <span class="glitch-text" data-text="UN-GAY URSELF™"
+                            >UN-GAY URSELF™</span
+                        >
+                    </h1>
+
+                    <p
+                        id="tagline"
+                        class="text-lg md:text-xl lg:text-2xl mb-8 text-cyan-400 font-bold font-cyber"
+                    >
+                        Available Nowhere. Results Guaranteed.
+                    </p>
+
+                    <button
+                        id="ctaButton"
+                        class="neon-btn bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 md:px-12 py-3 md:py-4 rounded-full text-lg md:text-xl font-bold hover:scale-110 transition-all duration-300 animate-pulse-glow border-purple-500 hover:animate-shake"
+                    >
+                        <i class="fas fa-pills mr-2"></i>
+                        Take Your Dose
+                    </button>
+                </div>
+            </section>
+
+            <!-- Side Effects Section -->
+            <section id="effects" class="py-12 md:py-20 px-4">
+                <div class="max-w-6xl mx-auto">
+                    <h2
+                        class="text-3xl md:text-4xl lg:text-6xl font-black text-center mb-12 md:mb-16 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
+                    >
+                        SIDE EFFECTS
+                    </h2>
+
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+                        id="sideEffects"
+                    >
+                        <!-- Side effects will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Meme Generator Section -->
+            <section
+                class="py-12 md:py-20 px-4 bg-gradient-to-r from-purple-900/30 to-pink-900/30"
+            >
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2
+                        class="text-3xl md:text-4xl lg:text-6xl font-black mb-12 md:mb-16 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
+                    >
+                        MEME GENERATOR
+                    </h2>
+
+                    <div
+                        class="bg-gray-800/50 p-6 md:p-8 rounded-2xl border border-purple-400/50 mb-8"
+                    >
+                        <h3 class="text-xl md:text-2xl font-bold mb-6 text-cyan-400">
+                            Generate Your Un-Gay Moment
+                        </h3>
+
+                        <div
+                            class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-6"
+                            id="memeButtons"
+                        >
+                            <!-- Meme buttons will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Merch Section -->
+            <section id="merch" class="py-12 md:py-20 px-4 bg-gray-800/30">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2
+                        class="text-3xl md:text-4xl lg:text-6xl font-black mb-12 md:mb-16 bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent"
+                    >
+                        MERCH INCOMING
+                    </h2>
+
+                    <div
+                        class="bg-gradient-to-r from-purple-500/20 to-pink-500/20 p-6 md:p-8 rounded-2xl border border-purple-400/50 mb-8"
+                    >
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4 text-cyan-400">
+                            Coming Soon™
+                        </h3>
+                        <p class="text-lg text-gray-300 mb-6">
+                            The freshest gear to complement your new lifestyle.
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <button
+                                class="merch-btn neon-btn bg-gray-700 hover:bg-gray-600 px-4 md:px-6 py-3 rounded-lg border-lime-400 text-lime-400 font-bold transition-all hover:scale-105"
+                                data-merch="hoodies"
+                            >
+                                <i class="fas fa-tshirt mr-2"></i>
+                                Buy Hoodies
+                            </button>
+                            <button
+                                class="merch-btn neon-btn bg-gray-700 hover:bg-gray-600 px-4 md:px-6 py-3 rounded-lg border-pink-400 text-pink-400 font-bold transition-all hover:scale-105"
+                                data-merch="pills"
+                            >
+                                <i class="fas fa-pills mr-2"></i>
+                                Pill Bottles
+                            </button>
+                            <button
+                                class="merch-btn neon-btn bg-gray-700 hover:bg-gray-600 px-4 md:px-6 py-3 rounded-lg border-orange-400 text-orange-400 font-bold transition-all hover:scale-105"
+                                data-merch="cards"
+                            >
+                                <i class="fas fa-gavel mr-2"></i>
+                                Court Summons Cards
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Video Showcase Section -->
+            <section id="video" class="py-12 md:py-20 px-4 bg-gradient-to-r from-cyan-900/20 to-blue-900/20">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2
+                        class="text-3xl md:text-4xl lg:text-6xl font-black mb-12 md:mb-16 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent"
+                    >
+                        TRANSFORMATION IN ACTION
+                    </h2>
+
+                    <div
+                        class="bg-gray-800/50 p-6 md:p-8 rounded-2xl border border-cyan-400/50 mb-8"
+                    >
+                        <h3 class="text-2xl md:text-3xl font-bold mb-6 text-cyan-400">
+                            See the Results for Yourself
+                        </h3>
+                        <p class="text-lg text-gray-300 mb-8">
+                            Watch real transformations happening in real-time. Side effects may include uncontrollable confidence and spontaneous grilling knowledge.
+                        </p>
+
+                        <div class="relative w-full max-w-3xl mx-auto">
+                            <video
+                                id="promoVideo"
+                                class="w-full rounded-xl shadow-2xl animate-pulse-glow border border-cyan-400/30"
+                                controls
+                                preload="metadata"
+                                poster="banner.png"
+                            >
+                                <source src="promo_video.mp4" type="video/mp4">
+                                <p class="text-gray-400">Your browser doesn't support video playback. Time to upgrade your tech game!</p>
+                            </video>
+                        </div>
+
+                        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="bg-gray-700/50 p-4 rounded-lg border border-cyan-400/30">
+                                <h4 class="font-bold text-cyan-400 mb-2">🎬 Real Footage</h4>
+                                <p class="text-sm text-gray-300">Unedited documentation of actual transformations</p>
+                            </div>
+                            <div class="bg-gray-700/50 p-4 rounded-lg border border-blue-400/30">
+                                <h4 class="font-bold text-blue-400 mb-2">⚡ Instant Results</h4>
+                                <p class="text-sm text-gray-300">Effects visible within seconds of viewing</p>
+                            </div>
+                            <div class="bg-gray-700/50 p-4 rounded-lg border border-purple-400/30">
+                                <h4 class="font-bold text-purple-400 mb-2">🔬 Science-Based</h4>
+                                <p class="text-sm text-gray-300">100% based on extremely scientific research</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Token Information Section -->
+            <section id="tokeninfo" class="py-12 md:py-20 px-4 bg-gray-800/20">
+                <div class="max-w-4xl mx-auto">
+                    <h2
+                        class="text-3xl md:text-4xl lg:text-6xl font-black text-center mb-12 md:mb-16 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent"
+                    >
+                        TOKEN INFO
+                    </h2>
+
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12"
+                        id="tokenInfo"
+                    >
+                        <!-- Token info will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Countdown Timer Section -->
+            <section
+                class="py-12 md:py-20 px-4 bg-gradient-to-r from-red-900/30 to-orange-900/30"
+            >
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2
+                        class="text-3xl md:text-4xl lg:text-6xl font-black mb-8 bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent"
+                    >
+                        LAUNCH COUNTDOWN
+                    </h2>
+
+                    <p class="text-lg md:text-xl text-gray-300 mb-8">
+                        Get ready for the ultimate transformation experience
+                    </p>
+
+                    <div
+                        class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-2xl mx-auto"
+                    >
+                        <div
+                            class="bg-gray-800/50 p-4 md:p-6 rounded-xl border border-red-400/30"
+                        >
+                            <div
+                                id="days"
+                                class="text-2xl md:text-4xl font-black text-red-400"
+                            >
+                                30
+                            </div>
+                            <div class="text-sm text-gray-400">DAYS</div>
+                        </div>
+                        <div
+                            class="bg-gray-800/50 p-4 md:p-6 rounded-xl border border-orange-400/30"
+                        >
+                            <div
+                                id="hours"
+                                class="text-2xl md:text-4xl font-black text-orange-400"
+                            >
+                                0
+                            </div>
+                            <div class="text-sm text-gray-400">HOURS</div>
+                        </div>
+                        <div
+                            class="bg-gray-800/50 p-4 md:p-6 rounded-xl border border-yellow-400/30"
+                        >
+                            <div
+                                id="minutes"
+                                class="text-2xl md:text-4xl font-black text-yellow-400"
+                            >
+                                0
+                            </div>
+                            <div class="text-sm text-gray-400">MINUTES</div>
+                        </div>
+                        <div
+                            class="bg-gray-800/50 p-4 md:p-6 rounded-xl border border-lime-400/30"
+                        >
+                            <div
+                                id="seconds"
+                                class="text-2xl md:text-4xl font-black text-lime-400"
+                            >
+                                0
+                            </div>
+                            <div class="text-sm text-gray-400">SECONDS</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials Section -->
+            <section class="py-12 md:py-20 px-4 bg-gray-800/20">
+                <div class="max-w-4xl mx-auto">
+                    <h2
+                        class="text-3xl md:text-4xl lg:text-6xl font-black text-center mb-12 md:mb-16 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent"
+                    >
+                        SUCCESS STORIES
+                    </h2>
+
+                    <div
+                        id="testimonialContainer"
+                        class="bg-gray-800/50 p-6 md:p-8 rounded-2xl border border-cyan-400/30 text-center min-h-[300px] flex items-center justify-center"
+                    >
+                        <!-- Testimonials will be populated by JavaScript -->
+                    </div>
+
+                    <div class="flex justify-center mt-6 space-x-2">
+                        <button
+                            id="prevTestimonial"
+                            class="p-2 rounded-full bg-gray-700 hover:bg-gray-600 transition"
+                        >
+                            <i class="fas fa-chevron-left text-cyan-400"></i>
+                        </button>
+                        <button
+                            id="nextTestimonial"
+                            class="p-2 rounded-full bg-gray-700 hover:bg-gray-600 transition"
+                        >
+                            <i class="fas fa-chevron-right text-cyan-400"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Whitepaper Section -->
+            <section id="whitepaper" class="py-12 md:py-20 px-4 bg-purple-900/20">
+                <div class="max-w-4xl mx-auto">
+                    <h2
+                        class="text-3xl md:text-4xl lg:text-6xl font-black text-center mb-12 md:mb-16 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
+                    >
+                        WHITEPAPER
+                    </h2>
+
+                    <div
+                        class="bg-gray-800/50 p-6 md:p-8 rounded-2xl border border-purple-400/30"
+                    >
+                        <h3 class="text-2xl md:text-3xl font-bold mb-6 text-purple-400">
+                            The Science Behind the Magic
+                        </h3>
+
+                        <div class="space-y-6 text-gray-300">
+                            <div>
+                                <h4 class="text-xl font-bold mb-3 text-cyan-400">
+                                    1. Introduction
+                                </h4>
+                                <p>
+                                    Welcome to the revolutionary Un-Gay Urself™ protocol - a
+                                    groundbreaking approach to masculine optimization through
+                                    satirical blockchain innovation.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h4 class="text-xl font-bold mb-3 text-cyan-400">
+                                    2. The Algorithm
+                                </h4>
+                                <p>
+                                    Our proprietary algorithm combines advanced memetics with
+                                    traditional bro science to deliver guaranteed results that
+                                    are available nowhere else.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h4 class="text-xl font-bold mb-3 text-cyan-400">
+                                    3. Tokenomics
+                                </h4>
+                                <p>
+                                    Built on the foundation of pure satire, our token
+                                    represents the ultimate expression of internet culture
+                                    meeting financial innovation.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h4 class="text-xl font-bold mb-3 text-cyan-400">
+                                    4. Roadmap
+                                </h4>
+                                <ul class="list-disc list-inside space-y-2 ml-4">
+                                    <li>Phase 1: Launch and meme distribution</li>
+                                    <li>Phase 2: Community building and virality</li>
+                                    <li>Phase 3: Merch empire expansion</li>
+                                    <li>Phase 4: Global transformation protocol</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Admin Panel Section -->
+            <section id="admin" class="py-12 md:py-20 px-4 bg-red-900/20 hidden">
+                <div class="max-w-4xl mx-auto">
+                    <h2
+                        class="text-3xl md:text-4xl lg:text-6xl font-black text-center mb-12 md:mb-16 bg-gradient-to-r from-red-400 to-yellow-400 bg-clip-text text-transparent"
+                    >
+                        ADMIN PANEL
+                    </h2>
+
+                    <!-- Login Form -->
+                    <div
+                        id="loginForm"
+                        class="bg-gray-800/50 p-6 md:p-8 rounded-2xl border border-red-400/30 text-center"
+                    >
+                        <h3 class="text-2xl font-bold mb-6 text-red-400">
+                            Admin Access Required
+                        </h3>
+                        <div class="max-w-sm mx-auto">
+                            <input
+                                type="password"
+                                id="adminPassword"
+                                placeholder="Enter admin password"
+                                class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white mb-4"
+                            />
+                            <button
+                                id="loginBtn"
+                                class="w-full neon-btn bg-gradient-to-r from-red-500 to-orange-500 text-white px-6 py-3 rounded-lg font-bold hover:scale-105 transition-all border-red-500"
+                            >
+                                Access Admin Panel
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Admin Controls -->
+                    <div
+                        id="adminControls"
+                        class="bg-gray-800/50 p-6 md:p-8 rounded-2xl border border-red-400/30 space-y-6 hidden"
+                    >
+                        <h3 class="text-2xl font-bold mb-6 text-red-400">
+                            Site Management
+                        </h3>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-300 mb-2">
+                                    Tagline
+                                </label>
+                                <input
+                                    type="text"
+                                    id="taglineInput"
+                                    class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white"
+                                />
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-bold text-gray-300 mb-2">
+                                    Token Symbol
+                                </label>
+                                <input
+                                    type="text"
+                                    id="tokenSymbolInput"
+                                    class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white"
+                                />
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-bold text-gray-300 mb-2">
+                                    Twitter Link
+                                </label>
+                                <input
+                                    type="url"
+                                    id="twitterInput"
+                                    class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white"
+                                />
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-bold text-gray-300 mb-2">
+                                    Telegram Link
+                                </label>
+                                <input
+                                    type="url"
+                                    id="telegramInput"
+                                    class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white"
+                                />
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-bold text-gray-300 mb-2">
+                                    Contract Address
+                                </label>
+                                <input
+                                    type="text"
+                                    id="contractInput"
+                                    class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white"
+                                />
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-bold text-gray-300 mb-2">
+                                    Market Cap
+                                </label>
+                                <input
+                                    type="text"
+                                    id="marketCapInput"
+                                    class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="flex space-x-4">
+                            <button
+                                id="saveChanges"
+                                class="neon-btn bg-gradient-to-r from-lime-500 to-green-500 text-black px-6 py-3 rounded-lg font-bold hover:scale-105 transition-all border-lime-500"
+                            >
+                                Save Changes
+                            </button>
+                            <button
+                                id="previewChanges"
+                                class="neon-btn bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-3 rounded-lg font-bold hover:scale-105 transition-all border-blue-500"
+                            >
+                                Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="py-12 px-4 border-t border-gray-700">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-8">
+                    <h3
+                        class="text-2xl md:text-3xl font-bold mb-4 text-purple-400"
+                    >
+                        Join the Revolution
+                    </h3>
+                    <p class="text-gray-400 mb-6">
+                        Stay connected for the latest updates and transformations
+                    </p>
+
+                    <div class="flex justify-center space-x-4" id="socialLinks">
+                        <a
+                            href="https://twitter.com/Chad_wickchad2k"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-link p-3 rounded-full bg-gray-700 hover:bg-blue-600 transition text-blue-400 hover:text-white"
+                            data-social="twitter"
+                        >
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a
+                            href="#"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-link p-3 rounded-full bg-gray-700 hover:bg-blue-500 transition text-blue-500 hover:text-white"
+                            data-social="telegram"
+                        >
+                            <i class="fab fa-telegram text-xl"></i>
+                        </a>
+                        <a
+                            href="#"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-link p-3 rounded-full bg-gray-700 hover:bg-green-600 transition text-green-400 hover:text-white"
+                            data-social="dex"
+                        >
+                            <i class="fas fa-chart-line text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div
+                    class="text-center text-gray-500 text-sm border-t border-gray-700 pt-8"
+                >
+                    <p>
+                        © 2025 Un-Gay Urself™. All rights reserved. Results
+                        guaranteed. Side effects may vary.
+                    </p>
+                    <p class="mt-2">
+                        This is a satirical meme token for entertainment purposes
+                        only.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>
