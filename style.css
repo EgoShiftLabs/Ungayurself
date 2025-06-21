@@ -18,6 +18,125 @@ html {
 
 body {
   margin: 0;
+  padding: 0;
+  background-color: #111827;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  padding: 1rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+#bannerImage {
+  width: 100%;
+  max-width: 1024px;
+  margin-bottom: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+#logoImage {
+  width: 128px;
+  height: 128px;
+  border-radius: 9999px;
+  margin: 0 auto 1.5rem auto;
+  animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0px rgba(255, 105, 180, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 20px 8px rgba(255, 105, 180, 0.9);
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+a.bg-pink-600 {
+  background-color: #ec4899;
+}
+
+a.bg-pink-600:hover {
+  background-color: #db2777;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.max-w-4xl {
+  max-width: 64rem;
+}
+
+.max-w-3xl {
+  max-width: 48rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
+.mt-12 {
+  margin-top: 3rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.rounded-xl {
+  border-radius: 1rem;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.shadow-md {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.text-gray-400 {
+  color: #9ca3af;
+}
+
+.text-gray-500 {
+  color: #6b7280;
+}
+
+body {
+  margin: 0;
   line-height: inherit;
   font-family: 'Orbitron', sans-serif;
   background-color: #111827;
