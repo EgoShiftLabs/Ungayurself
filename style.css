@@ -506,5 +506,14 @@ body {
 
   .text-4xl {
     font-size: 2rem;
+
+    .logo {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 25px #ff00ff;
+    }
   }
 }
