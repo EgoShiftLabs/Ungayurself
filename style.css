@@ -515,5 +515,11 @@ body {
   border-radius: 50%;
   box-shadow: 0 0 25px #ff00ff;
     }
+
+    img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+    }
   }
 }
