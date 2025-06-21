@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un-Gay Urself™ - Available Nowhere. Results Guaranteed.</title>
+    <meta name="description" content="The satirical meme token that guarantees results. Experience side effects like sudden pull-up strength, freestyle outbreaks, and more. Available nowhere, results guaranteed.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sound Effects Toggle -->
+    <div id="soundToggle" class="fixed top-4 right-4 z-50">
+        <button id="soundBtn" class="p-3 rounded-full transition-all bg-purple-600 text-white hover:bg-purple-700" title="Disable sound effects">
+            <i class="fas fa-volume-up"></i>
+        </button>
+    </div>
+
+    <!-- Achievement System -->
+    <div id="achievementProgress" class="fixed bottom-4 left-4 z-50">
+        <div class="bg-gray-800/90 backdrop-blur-sm p-3 rounded-lg border border-purple-400/50 min-w-[200px]">
+            <div class="flex items-center justify-between mb-2">
+                <span class="text-sm font-bold text-purple-400">Achievements</span>
+                <span class="text-xs text-gray-300" id="achievementCount">1/5</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2">
+                <div id="achievementBar" class="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full transition-all duration-500" style="width: 20%"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Achievement Notification -->
+    <div id="achievementNotification" class="fixed top-20 right-4 z-50 animate-slide-in hidden">
+        <div class="bg-gradient-to-r from-purple-600 to-pink-600 p-4 rounded-lg border border-yellow-400 shadow-2xl max-w-sm">
+            <div class="flex items-center">
+                <span class="text-3xl mr-3" id="achievementIcon">🏆</span>
+                <div>
+                    <h3 class="font-bold text-white">Achievement Unlocked!</h3>
+                    <p class="text-sm text-gray-200" id="achievementTitle">First Dose</p>
+                    <p class="text-xs text-gray-300" id="achievementDesc">Visited the Un-Gay Urself website</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Animated Background -->
+    <div class="fixed top-0 left-0 right-0 bottom-0 z-[-2] animate-rainbow-bg"></div>
+
+    <!-- Floating Elements -->
+    <div id="floatingElements" class="fixed top-0 left-0 right-0 bottom-0 z-[-1] pointer-events-none"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-purple-500/30">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="text-xl font-bold text-purple-400">Un-Gay Urself™</div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="hover:text-pink-400 transition">Home</a>
+                <a href="#effects" class="hover:text-pink-400 transition">Side Effects</a>
+                <a href="#merch" class="hover:text-pink-400 transition">Merch</a>
+                <a href="#tokeninfo" class="hover:text-pink-400 transition">Token Info</a>
+                <a href="#whitepaper" class="hover:text-pink-400 transition">Whitepaper</a>
+            </div>
+            <a href="#admin" id="adminLink" class="text-sm text-gray-400 hover:text-white transition">Admin</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div id="mainContent">
+        <!-- Header Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center text-center px-4 pt-20">
+            <div class="max-w-4xl mx-auto">
+                <!-- Banner -->
+                <div class="mb-8">
+                    <img id="bannerImage" src="banner.png" alt="Un-Gay Urself Banner" class="w-full max-w-4xl mx-auto mb-6 rounded-2xl shadow-2xl animate-pulse-glow">
+                </div>
+
+                <!-- Logo -->
+                <div class="mb-8">
+                    <img id="logoImage" src="logo.png" alt="Un-Gay Urself Logo" class="w-32 h-32 mx-auto mb-6 rounded-full animate-pulse-glow">
+                </div>
+
+                <h1 class="text-6xl md:text-8xl font-black mb-4 font-meme relative">
+                    <span class="glitch-text" data-text="UN-GAY URSELF™">UN-GAY URSELF™</span>
+                </h1>
+
+                <p id="tagline" class="text-xl md:text-2xl mb-8 text-cyan-400 font-bold font-cyber">
+                    Available Nowhere. Results Guaranteed.
+                </p>
+
+                <button id="ctaButton" class="neon-btn bg-gradient-to-r from-purple-500 to-pink-500 text-white px-12 py-4 rounded-full text-xl font-bold hover:scale-110 transition-all duration-300 animate-pulse-glow border-purple-500 hover:animate-shake">
+                    <i class="fas fa-pills mr-2"></i>
+                    Take Your Dose
+                </button>
+            </div>
+        </section>
+
+        <!-- Side Effects Section -->
+        <section id="effects" class="py-20 px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl md:text-6xl font-black text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    SIDE EFFECTS
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="sideEffects">
+                    <!-- Side effects will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Meme Generator Section -->
+        <section class="py-20 px-4 bg-gradient-to-r from-purple-900/30 to-pink-900/30">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-6xl font-black mb-16 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    MEME GENERATOR
+                </h2>
+
+                <div class="bg-gray-800/50 p-8 rounded-2xl border border-purple-400/50 mb-8">
+                    <h3 class="text-2xl font-bold mb-6 text-cyan-400">Generate Your Un-Gay Moment</h3>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6" id="memeButtons">
+                        <!-- Meme buttons will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Merch Section -->
+        <section id="merch" class="py-20 px-4 bg-gray-800/30">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-6xl font-black mb-16 bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent">
+                    MERCH INCOMING
+                </h2>
+
+                <div class="bg-gradient-to-r from-purple-500/20 to-pink-500/20 p-8 rounded-2xl border border-purple-400/50 mb-8">
+                    <h3 class="text-3xl font-bold mb-4 text-cyan-400">Coming Soon™</h3>
+                    <p class="text-lg text-gray-300 mb-6">
+                        The freshest gear to complement your new lifestyle.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <button class="merch-btn neon-btn bg-gray-700 hover:bg-gray-600 px-6 py-3 rounded-lg border-lime-400 text-lime-400 font-bold transition-all hover:scale-105" data-merch="hoodies">
+                            <i class="fas fa-tshirt mr-2"></i>
+                            Buy Hoodies
+                        </button>
+                        <button class="merch-btn neon-btn bg-gray-700 hover:bg-gray-600 px-6 py-3 rounded-lg border-pink-400 text-pink-400 font-bold transition-all hover:scale-105" data-merch="pills">
+                            <i class="fas fa-pills mr-2"></i>
+                            Pill Bottles
+                        </button>
+                        <button class="merch-btn neon-btn bg-gray-700 hover:bg-gray-600 px-6 py-3 rounded-lg border-orange-400 text-orange-400 font-bold transition-all hover:scale-105" data-merch="cards">
+                            <i class="fas fa-gavel mr-2"></i>
+                            Court Summons Cards
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Token Information Section -->
+        <section id="tokeninfo" class="py-20 px-4 bg-gray-800/20">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-6xl font-black text-center mb-16 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+                    TOKEN INFO
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12" id="tokenInfo">
+                    <!-- Token info will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Countdown Timer Section -->
+        <section class="py-20 px-4 bg-gradient-to-r from-red-900/30 to-orange-900/30">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-6xl font-black mb-8 bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
+                    NEXT DOSE COUNTDOWN
+                </h2>
+                
+                <p class="text-xl text-gray-300 mb-12">
+                    Time until the next batch of transformation pills becomes available
+                </p>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8" id="countdown">
+                    <div class="bg-gray-800/50 p-6 rounded-xl border border-red-400/30">
+                        <div class="text-4xl md:text-6xl font-black text-red-400 mb-2" id="days">30</div>
+                        <div class="text-gray-300 font-bold">DAYS</div>
+                    </div>
+                    <div class="bg-gray-800/50 p-6 rounded-xl border border-orange-400/30">
+                        <div class="text-4xl md:text-6xl font-black text-orange-400 mb-2" id="hours">0</div>
+                        <div class="text-gray-300 font-bold">HOURS</div>
+                    </div>
+                    <div class="bg-gray-800/50 p-6 rounded-xl border border-yellow-400/30">
+                        <div class="text-4xl md:text-6xl font-black text-yellow-400 mb-2" id="minutes">0</div>
+                        <div class="text-gray-300 font-bold">MINUTES</div>
+                    </div>
+                    <div class="bg-gray-800/50 p-6 rounded-xl border border-lime-400/30">
+                        <div class="text-4xl md:text-6xl font-black text-lime-400 mb-2 animate-pulse" id="seconds">0</div>
+                        <div class="text-gray-300 font-bold">SECONDS</div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800/50 p-6 rounded-xl border border-purple-400/30">
+                    <h3 class="text-2xl font-bold text-purple-400 mb-4">Pre-Order Perks</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-300">
+                        <div>🎯 Early access to premium pills</div>
+                        <div>📈 Bonus transformation multiplier</div>
+                        <div>🏆 Exclusive Chad certificate</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-20 px-4 bg-gradient-to-r from-cyan-900/20 to-blue-900/20">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-6xl font-black mb-16 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                    SUCCESS STORIES
+                </h2>
+
+                <div class="relative bg-gray-800/50 p-8 rounded-2xl border border-cyan-400/50 min-h-[300px] flex items-center">
+                    <div class="w-full" id="testimonialContent">
+                        <!-- Testimonial content will be populated by JavaScript -->
+                    </div>
+
+                    <!-- Navigation dots -->
+                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2" id="testimonialDots">
+                        <!-- Dots will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <p class="text-gray-400 text-sm">
+                        * Results not typical. Individual results may vary. Side effects include increased confidence and dad joke frequency.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Whitepaper Section -->
+        <section id="whitepaper" class="py-20 px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-6xl font-black text-center mb-16 bg-gradient-to-r from-cyan-400 to-lime-400 bg-clip-text text-transparent">
+                    OUR PAPER. IT'S KINDA WHITE.
+                </h2>
+
+                <div class="bg-gray-800/50 p-8 rounded-2xl border border-cyan-400/30">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold mb-4 text-purple-400">📈 Tokenomics</h3>
+                            <p class="text-gray-300">
+                                "We made some. You buy some. Then others cry."
+                            </p>
+                        </div>
+
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold mb-4 text-pink-400">🗺️ Roadmap</h3>
+                            <p class="text-gray-300">
+                                "Phase 1 – Chaos. Phase 2 – Lawsuits. Phase 3 – Merch table."
+                            </p>
+                        </div>
+
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold mb-4 text-lime-400">⚡ Utility</h3>
+                            <p class="text-gray-300">
+                                "We cure digital sass."
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <p class="text-lg text-gray-300 mb-6">
+                            Our comprehensive 47-page document explains exactly how we plan to revolutionize
+                            the digital masculinity space through blockchain technology and pure meme energy.
+                        </p>
+
+                        <button id="whitepaperBtn" class="neon-btn bg-gradient-to-r from-cyan-400 to-lime-400 text-black px-8 py-3 rounded-lg font-bold hover:scale-105 transition-all border-cyan-400">
+                            <i class="fas fa-download mr-2"></i>
+                            Download Whitepaper
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-12 px-4 bg-gray-900/80 border-t border-purple-400/30">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="flex justify-center space-x-8 mb-8">
+                    <a href="#" id="twitterLink" class="text-3xl hover:text-cyan-400 transition-colors social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" id="telegramLink" class="text-3xl hover:text-pink-400 transition-colors social-link">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="#" id="dexLink" class="text-3xl hover:text-lime-400 transition-colors social-link">
+                        <i class="fas fa-chart-line"></i>
+                    </a>
+                </div>
+
+                <p class="text-gray-400 text-sm mb-4">
+                    Not FDA approved. Not financial advice. Possibly real.
+                </p>
+
+                <p class="text-gray-500 text-xs">
+                    © 2024 Un-Gay Urself™. All rights reserved. Side effects may vary.
+                    Consult your therapist before use.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="adminPanel" class="hidden min-h-screen bg-gray-900 p-4">
+        <div class="fixed inset-0 bg-gradient-to-br from-purple-900/20 to-pink-900/20"></div>
+        
+        <!-- Login Form -->
+        <div id="adminLogin" class="min-h-screen flex items-center justify-center p-4">
+            <div class="w-full max-w-md relative z-10 bg-gray-800/90 border border-purple-500/50 backdrop-blur-sm p-6 rounded-lg">
+                <h2 class="text-2xl font-bold text-center text-purple-400 mb-6">Admin Access</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label class="text-gray-300 block mb-1">Password</label>
+                        <input type="password" id="adminPassword" class="w-full bg-gray-700 border border-gray-600 text-white p-3 rounded focus:border-purple-400" placeholder="Enter admin password">
+                        <p id="loginError" class="text-red-400 text-sm mt-1 hidden">Invalid password!</p>
+                    </div>
+                    
+                    <div class="flex space-x-4">
+                        <button id="loginBtn" class="flex-1 bg-purple-600 hover:bg-purple-700 text-white p-3 rounded font-bold">Login</button>
+                        <button id="cancelBtn" class="flex-1 border border-gray-600 text-gray-300 hover:bg-gray-700 p-3 rounded">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Dashboard -->
+        <div id="adminDashboard" class="hidden max-w-6xl mx-auto relative z-10">
+            <div class="bg-gray-800/90 border border-purple-500/50 backdrop-blur-sm rounded-lg">
+                <div class="p-6 border-b border-gray-700">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-2xl font-bold text-purple-400">Admin Panel</h2>
+                        <div class="flex space-x-2">
+                            <button id="backToSite" class="border border-gray-600 text-gray-300 hover:bg-gray-700 px-4 py-2 rounded">Back to Site</button>
+                            <button id="logoutBtn" class="border border-red-600 text-red-400 hover:bg-red-900/20 px-4 py-2 rounded">Logout</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-6 space-y-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <!-- Basic Settings -->
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-semibold text-cyan-400">Basic Settings</h3>
+                            
+                            <div>
+                                <label class="text-gray-300 block mb-1">Tagline</label>
+                                <input type="text" id="editTagline" class="w-full bg-gray-700 border border-gray-600 text-white p-2 rounded focus:border-purple-400">
+                            </div>
+
+                            <div>
+                                <label class="text-gray-300 block mb-1">Logo Upload</label>
+                                <input type="file" id="logoUpload" accept="image/*" class="w-full bg-gray-700 border border-gray-600 text-white p-2 rounded focus:border-purple-400">
+                                <p id="logoStatus" class="text-sm mt-1 hidden"></p>
+                            </div>
+
+                            <div>
+                                <label class="text-gray-300 block mb-1">Banner Upload</label>
+                                <input type="file" id="bannerUpload" accept="image/*" class="w-full bg-gray-700 border border-gray-600 text-white p-2 rounded focus:border-purple-400">
+                                <p id="bannerStatus" class="text-sm mt-1 hidden"></p>
+                            </div>
+
+                            <!-- Visual Previews -->
+                            <div class="space-y-4">
+                                <div id="logoPreview" class="hidden">
+                                    <label class="text-gray-300 text-sm block mb-1">Current Logo</label>
+                                    <img id="currentLogo" class="w-16 h-16 rounded-full border border-purple-400">
+                                </div>
+                                
+                                <div id="bannerPreview" class="hidden">
+                                    <label class="text-gray-300 text-sm block mb-1">Current Banner</label>
+                                    <img id="currentBanner" class="w-full max-w-xs rounded-lg border border-purple-400">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-semibold text-pink-400">Social Links</h3>
+                            
+                            <div>
+                                <label class="text-gray-300 block mb-1">Telegram Link</label>
+                                <input type="url" id="editTelegram" class="w-full bg-gray-700 border border-gray-600 text-white p-2 rounded focus:border-purple-400" placeholder="https://t.me/yourgroup">
+                            </div>
+
+                            <div>
+                                <label class="text-gray-300 block mb-1">Twitter Link</label>
+                                <input type="url" id="editTwitter" class="w-full bg-gray-700 border border-gray-600 text-white p-2 rounded focus:border-purple-400" placeholder="https://twitter.com/username">
+                            </div>
+
+                            <div>
+                                <label class="text-gray-300 block mb-1">Dex Link</label>
+                                <input type="url" id="editDex" class="w-full bg-gray-700 border border-gray-600 text-white p-2 rounded focus:border-purple-400" placeholder="https://dex.example.com">
+                            </div>
+                        </div>
+
+                        <!-- Token Information -->
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-semibold text-lime-400">Token Information</h3>
+                            
+                            <div>
+                                <label class="text-gray-300 block mb-1">Token Name</label>
+                                <input type="text" id="editTokenName" class="w-full bg-gray-700 border border-gray-600 text-white p-2 rounded focus:border-purple-400" placeholder="Un-Gay Urself">
+                            </div>
+
+                            <div>
+                                <label class="text-gray-300 block mb-1">Token Symbol</label>
+                                <input type="text" id="editTokenSymbol" class="w-full bg-gray-700 border border-gray-600 text-white p-2 rounded focus:border-purple-400" placeholder="UNGAY">
+                            </div>
+
+                            <div>
+                                <label class="text-gray-300 block mb-1">Contract Address</label>
+                                <input type="text" id="editContract" class="w-full bg-gray-700 border border-gray-600 text-white p-2 rounded focus:border-purple-400" placeholder="0x...">
+                            </div>
+
+                            <div>
+                                <label class="text-gray-300 block mb-1">Total Supply</label>
+                                <input type="text" id="editSupply" class="w-full bg-gray-700 border border-gray-600 text-white p-2 rounded focus:border-purple-400" placeholder="1,000,000,000">
+                            </div>
+
+                            <div>
+                                <label class="text-gray-300 block mb-1">Market Cap</label>
+                                <input type="text" id="editMarketCap" class="w-full bg-gray-700 border border-gray-600 text-white p-2 rounded focus:border-purple-400" placeholder="$1,000,000">
+                            </div>
+
+                            <div>
+                                <label class="text-gray-300 block mb-1">Liquidity Pool</label>
+                                <input type="text" id="editLiquidity" class="w-full bg-gray-700 border border-gray-600 text-white p-2 rounded focus:border-purple-400" placeholder="Pool address or info">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-gray-700">
+                        <button id="saveChanges" class="w-full bg-lime-500 hover:bg-lime-600 text-black font-bold py-3 rounded">
+                            Save Changes
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
